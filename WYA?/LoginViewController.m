@@ -56,7 +56,7 @@
 
 - (void) showHomescreen {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+    UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"PackagesViewController"];
     SceneDelegate *mySceneDelegate = (SceneDelegate * ) UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
         mySceneDelegate.window.rootViewController = tabBarController;
 
