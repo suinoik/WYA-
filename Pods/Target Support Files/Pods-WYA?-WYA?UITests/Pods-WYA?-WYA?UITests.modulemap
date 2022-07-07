@@ -1,0 +1,6 @@
+framework module Pods_WYA__WYA_UITests {
+  umbrella header "Pods-WYA?-WYA?UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
