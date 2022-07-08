@@ -19,6 +19,8 @@
 		4428359A2874D661002DDE5B /* WYA_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 442835992874D661002DDE5B /* WYA_UITests.m */; };
 		4428359C2874D661002DDE5B /* WYA_UITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4428359B2874D661002DDE5B /* WYA_UITestsLaunchTests.m */; };
 		442835AA2874D9E5002DDE5B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 442835A92874D9E5002DDE5B /* LoginViewController.m */; };
+		44B8F1142878ADDB00668B63 /* ManualAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B8F1132878ADDB00668B63 /* ManualAddViewController.m */; };
+		44B8F1172878C96A00668B63 /* PackageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B8F1162878C96A00668B63 /* PackageCell.m */; };
 		44E4319A2877693F0062C782 /* PackagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E431992877693F0062C782 /* PackagesViewController.m */; };
 		6BFBEAB16CC6F92F6D8BCC25 /* Pods_WYA_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3E37636C8C583BAC5EACE /* Pods_WYA_Tests.framework */; };
 		C0FED17DC3A34BB1D4B64896 /* Pods_WYA__WYA_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BBB351C3C542A0BC76F75B /* Pods_WYA__WYA_UITests.framework */; };
@@ -65,6 +67,10 @@
 		4428359B2874D661002DDE5B /* WYA_UITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYA_UITestsLaunchTests.m; sourceTree = "<group>"; };
 		442835A82874D9E5002DDE5B /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		442835A92874D9E5002DDE5B /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		44B8F1122878ADDB00668B63 /* ManualAddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManualAddViewController.h; sourceTree = "<group>"; };
+		44B8F1132878ADDB00668B63 /* ManualAddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManualAddViewController.m; sourceTree = "<group>"; };
+		44B8F1152878C96A00668B63 /* PackageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PackageCell.h; sourceTree = "<group>"; };
+		44B8F1162878C96A00668B63 /* PackageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PackageCell.m; sourceTree = "<group>"; };
 		44E431982877693F0062C782 /* PackagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PackagesViewController.h; sourceTree = "<group>"; };
 		44E431992877693F0062C782 /* PackagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PackagesViewController.m; sourceTree = "<group>"; };
 		7C77DF9CA24F89165D432351 /* Pods-WYA?Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYA?Tests.release.xcconfig"; path = "Target Support Files/Pods-WYA?Tests/Pods-WYA?Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +140,10 @@
 				442835792874D65F002DDE5B /* ViewController.h */,
 				4428357A2874D65F002DDE5B /* ViewController.m */,
 				4428357C2874D65F002DDE5B /* Main.storyboard */,
+				44B8F1152878C96A00668B63 /* PackageCell.h */,
+				44B8F1162878C96A00668B63 /* PackageCell.m */,
+				44B8F1122878ADDB00668B63 /* ManualAddViewController.h */,
+				44B8F1132878ADDB00668B63 /* ManualAddViewController.m */,
 				44E431982877693F0062C782 /* PackagesViewController.h */,
 				44E431992877693F0062C782 /* PackagesViewController.m */,
 				442835A82874D9E5002DDE5B /* LoginViewController.h */,
@@ -427,6 +437,8 @@
 				4428357B2874D65F002DDE5B /* ViewController.m in Sources */,
 				442835752874D65F002DDE5B /* AppDelegate.m in Sources */,
 				442835862874D660002DDE5B /* main.m in Sources */,
+				44B8F1142878ADDB00668B63 /* ManualAddViewController.m in Sources */,
+				44B8F1172878C96A00668B63 /* PackageCell.m in Sources */,
 				442835782874D65F002DDE5B /* SceneDelegate.m in Sources */,
 				442835AA2874D9E5002DDE5B /* LoginViewController.m in Sources */,
 				44E4319A2877693F0062C782 /* PackagesViewController.m in Sources */,
