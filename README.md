@@ -4,6 +4,7 @@
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
+1. [Technically Ambiguous Problems](#Technically-Ambiguous-Problems)
 
 ## Overview
 ### Description
@@ -65,3 +66,4 @@ Tracks orders and packages once info is sent to the user's email. The app is abl
 ## Wireframes
 ![IMG_4103](https://user-images.githubusercontent.com/75452326/177435542-417efd9a-e324-497f-9753-5d9b617d2b31.jpg)
 
+## Technically Ambiguous Problems
