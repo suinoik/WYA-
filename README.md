@@ -4,6 +4,7 @@
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
+1. [Technically Ambiguous Problems](#Technically-Ambiguous-Problems)
 
 ## Overview
 ### Description
@@ -65,3 +66,6 @@ Tracks orders and packages once info is sent to the user's email. The app is abl
 ## Wireframes
 ![IMG_4103](https://user-images.githubusercontent.com/75452326/177435542-417efd9a-e324-497f-9753-5d9b617d2b31.jpg)
 
+## Technically Ambiguous Problems
+- **Pagination:** Package home view will display the latest 15 - 20 packages, and any additional packages will be displayed on the next page. A selector for the current page to be displayed will be at the bottom of the page for the user.
+- **Filtering:** Users will be able to look up packages that fit into a specific criteria, e.g package carrier, weight specifications, date delivered.
