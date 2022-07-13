@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		340B9C6D782C27AF48E9D9C2 /* Pods_WYA_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B6D645A25E2215ECE91A71 /* Pods_WYA_.framework */; };
+		4425DAAA287CCF6300C602C6 /* PackageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4425DAA9287CCF6300C602C6 /* PackageDetailViewController.m */; };
 		442835752874D65F002DDE5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 442835742874D65F002DDE5B /* AppDelegate.m */; };
 		442835782874D65F002DDE5B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 442835772874D65F002DDE5B /* SceneDelegate.m */; };
 		4428357B2874D65F002DDE5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4428357A2874D65F002DDE5B /* ViewController.m */; };
@@ -48,6 +49,8 @@
 		1142771EAEB4ECA2CE439BE1 /* Pods-WYA?.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYA?.debug.xcconfig"; path = "Target Support Files/Pods-WYA?/Pods-WYA?.debug.xcconfig"; sourceTree = "<group>"; };
 		1B8F82A49637D91CB2F3E7B4 /* Pods-WYA?.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYA?.release.xcconfig"; path = "Target Support Files/Pods-WYA?/Pods-WYA?.release.xcconfig"; sourceTree = "<group>"; };
 		38B3E37636C8C583BAC5EACE /* Pods_WYA_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WYA_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4425DAA8287CCF6300C602C6 /* PackageDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PackageDetailViewController.h; sourceTree = "<group>"; };
+		4425DAA9287CCF6300C602C6 /* PackageDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PackageDetailViewController.m; sourceTree = "<group>"; };
 		442835702874D65F002DDE5B /* WYA?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WYA?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		442835732874D65F002DDE5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		442835742874D65F002DDE5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				44B8F1162878C96A00668B63 /* PackageCell.m */,
 				44B8F1122878ADDB00668B63 /* ManualAddViewController.h */,
 				44B8F1132878ADDB00668B63 /* ManualAddViewController.m */,
+				4425DAA8287CCF6300C602C6 /* PackageDetailViewController.h */,
+				4425DAA9287CCF6300C602C6 /* PackageDetailViewController.m */,
 				44E431982877693F0062C782 /* PackagesViewController.h */,
 				44E431992877693F0062C782 /* PackagesViewController.m */,
 				442835A82874D9E5002DDE5B /* LoginViewController.h */,
@@ -436,6 +441,7 @@
 			files = (
 				4428357B2874D65F002DDE5B /* ViewController.m in Sources */,
 				442835752874D65F002DDE5B /* AppDelegate.m in Sources */,
+				4425DAAA287CCF6300C602C6 /* PackageDetailViewController.m in Sources */,
 				442835862874D660002DDE5B /* main.m in Sources */,
 				44B8F1142878ADDB00668B63 /* ManualAddViewController.m in Sources */,
 				44B8F1172878C96A00668B63 /* PackageCell.m in Sources */,
