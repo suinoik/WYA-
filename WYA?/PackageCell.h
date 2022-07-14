@@ -10,9 +10,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PackageCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *packagePicture;
-@property (weak, nonatomic) IBOutlet UILabel *packageTitle;
-
+@property (weak, nonatomic) IBOutlet UILabel *carrier;
+@property (weak, nonatomic) IBOutlet UILabel *deliveryDate;
+@property (weak, nonatomic) IBOutlet UILabel *deliveryMessage;
+@property (weak, nonatomic) IBOutlet UILabel *status;
+@property (weak, nonatomic) IBOutlet UILabel *trackingNumber;
 @end
 
 NS_ASSUME_NONNULL_END
