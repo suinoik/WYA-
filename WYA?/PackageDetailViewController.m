@@ -6,6 +6,7 @@
 //
 
 #import "PackageDetailViewController.h"
+#import "PackageCell.h"
 
 @interface PackageDetailViewController ()
 

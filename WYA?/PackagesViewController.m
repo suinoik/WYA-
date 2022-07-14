@@ -32,14 +32,21 @@
     }];
 }
 
-- (void) fetchPackages {
-    NSURL *url = [NSURL URLWithString:@"https://api.easypost.com/v2/parcels/:id"];
+- (void) createTracker {
+    NSURL *url = [NSURL URLWithString:@"https://api.easypost.com/v2/trackers"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:60.0];
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request addValue:@"Basic EZTK45f39f67405b4f788fefd5ccb961247eQQK4f8rCAoP1HpK9UDPjlA" forHTTPHeaderField:@"Authoriation"];
+    [request addValue:@"Basic RVpUSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZDVjY2I5NjEyNDdlY0lGeTZrNENONU9qcWxrM2dBaXFuQQ==" forHTTPHeaderField:@"Authorization"];
+    [request setHTTPMethod:@"POST"];
+    
+    NSDictionary *trackerBody = [NSDictionary dictionaryWithObjectsAndKeys:@"EZ1000000001", @"tracking_code", @"USPS", @"carrier", nil];
+    NSDictionary *requestBodyDict = [NSDictionary dictionaryWithObjectsAndKeys:trackerBody, @"tracker", nil];
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:requestBodyDict options:kNilOptions error:nil];
+    [request setHTTPBody:postData];
+    
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
@@ -47,47 +54,50 @@
            }
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//               NSLog(dataDictionary);
                self.arrayOfPackages = dataDictionary[@"id"];
                NSLog(@"test2 %@", dataDictionary);
+               NSLog(@"actually returned something %@", self.arrayOfPackages);
+//               NSLog(@"test2 %@", self.arrayOfPackages);
            }
         [self.tableView reloadData];
+        [task resume];
 
        }];
     
     [task resume];
 }
 
-- (void) createPackage {
-    NSURL *url = [NSURL URLWithString:@"https://api.easypost.com/v2/parcels"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:60.0];
-    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request addValue:@"Basic EZTK45f39f67405b4f788fefd5ccb961247eQQK4f8rCAoP1HpK9UDPjlA" forHTTPHeaderField:@"Authoriation"];
-    [request setHTTPMethod:@"POST"];
-    NSDictionary *mapData = [[NSDictionary alloc] initWithObjectsAndKeys: @"20.2", @"length", @"50", @"width", @"25",
-                         @"height", @"30", @"weight",
-                         nil];
-    NSData *postData = [NSJSONSerialization dataWithJSONObject:mapData options:0 error:nil];
-    [request setHTTPBody:postData];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-           if (error != nil) {
-               NSLog(@"test43%@", [error localizedDescription]);
-           }
-           else {
-               NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-               self.arrayOfPackages = dataDictionary[@"id"];
-               NSLog(@"test4 %@", self.arrayOfPackages);
-           }
-        [self.tableView reloadData];
-
-       }];
-    
-    [task resume];
-    
-}
+//- (void) createPackage {
+//    NSURL *url = [NSURL URLWithString:@"https://api.easypost.com/v2/parcels"];
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
+//                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+//                                                       timeoutInterval:60.0];
+//    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+//    [request addValue:@"Basic RVpUSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZDVjY2I5NjEyNDdlUVFLNGY4ckNBb1AxSHBLOVVEUGpsQQ==" forHTTPHeaderField:@"Authorization"];
+//    [request setHTTPMethod:@"POST"];
+//    NSDictionary *parcelBody = [NSDictionary dictionaryWithObjectsAndKeys:@"20", @"length", @"10", @"width", @"5", @"height", @"65", @"weight", nil];
+//        NSDictionary *requestBodyDict = [NSDictionary dictionaryWithObjectsAndKeys:parcelBody, @"parcel", nil];
+//    NSData *postData = [NSJSONSerialization dataWithJSONObject:requestBodyDict options:kNilOptions error:nil];
+//    [request setHTTPBody:postData];
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+//    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//           if (error != nil) {
+//               NSLog(@"test3 %@", [error localizedDescription]);
+//           }
+//           else {
+//               NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//               self.arrayOfPackages = dataDictionary[@"id"];
+//               NSLog(@"test4 %@", self.arrayOfPackages);
+//           }
+//        [self.tableView reloadData];
+//
+//       }];
+//
+//    [task resume];
+//
+//}
 
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //    if([[segue identifier] isEqualToString:@"composeSegue"]){
@@ -107,8 +117,7 @@
 NSArray *data;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createPackage];
-    [self fetchPackages];
+    [self createTracker];
     
     // Do any additional setup after loading the view.
     data = @[@"New York, NY", @"Los Angeles, CA", @"Chicago, IL", @"Houston, TX",
