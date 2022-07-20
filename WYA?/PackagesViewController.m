@@ -23,9 +23,9 @@
 
 @implementation PackagesViewController
 NSString const *kEasyPostTestTrackingCode = @"EZ1000000001";
-NSString const *kEasyPostAPIKey = @"RVpUSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZDVjY2I5NjEyNDdlY0lGeTZrNENONU9qcWxrM2dBaXFuQQ==";
+NSString const *kEasyPostAPITestKey = @"RVpUSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZDVjY2I5NjEyNDdlY0lGeTZrNENONU9qcWxrM2dBaXFuQQ==";
 NSString const *kEasyPostTestCarrier = @"USPS";
-
+NSString const *kEasyPostAPIProductionKey = @"RVpBSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZDVjY2I5NjEyNDdlMHppZWZtZXA0NnNrd3hFQTJvazlFdw==" ;
 
 
 - (IBAction)logoutButton:(id)sender {
@@ -55,7 +55,7 @@ NSString const *kEasyPostTestCarrier = @"USPS";
     [request addValue:@"Basic RVpUSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZDVjY2I5NjEyNDdlY0lGeTZrNENONU9qcWxrM2dBaXFuQQ==" forHTTPHeaderField:@"Authorization"];
     [request setHTTPMethod:@"POST"];
     
-    NSDictionary *trackerBody = [NSDictionary dictionaryWithObjectsAndKeys:@"EZ1000000001", @"tracking_code", @"USPS", @"carrier", nil];
+    NSDictionary *trackerBody = [NSDictionary dictionaryWithObjectsAndKeys:@"EZ2000000002", @"tracking_code", @"USPS", @"carrier", nil];
     NSDictionary *requestBodyDict = [NSDictionary dictionaryWithObjectsAndKeys:trackerBody, @"tracker", nil];
     NSData *postData = [NSJSONSerialization dataWithJSONObject:requestBodyDict options:kNilOptions error:nil];
     [request setHTTPBody:postData];
@@ -68,7 +68,7 @@ NSString const *kEasyPostTestCarrier = @"USPS";
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                self.arrayOfPackages = (NSMutableDictionary *) dataDictionary;
-               NSLog(@"test2 %@", dataDictionary);
+//               NSLog(@"test2 %@", dataDictionary);
                NSLog(@"actually returned something %@", self.arrayOfPackages);
            }
         [self.tableView reloadData];
