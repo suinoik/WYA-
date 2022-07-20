@@ -72,7 +72,6 @@ NSString const *kEasyPostTestCarrier = @"USPS";
                NSLog(@"actually returned something %@", self.arrayOfPackages);
            }
         [self.tableView reloadData];
-        [task resume];
 
        }];
     
