@@ -11,6 +11,7 @@
 #import "SceneDelegate.h"
 #import "PackageCell.h"
 #import "PackageDetailViewController.h"
+#import "ManualAddViewController.h"
 
 
 @interface PackagesViewController ()
@@ -55,7 +56,7 @@ NSString const *kEasyPostAPIProductionKey = @"RVpBSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZD
     [request addValue:@"Basic RVpUSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZDVjY2I5NjEyNDdlY0lGeTZrNENONU9qcWxrM2dBaXFuQQ==" forHTTPHeaderField:@"Authorization"];
     [request setHTTPMethod:@"POST"];
     
-    NSDictionary *trackerBody = [NSDictionary dictionaryWithObjectsAndKeys:@"EZ2000000002", @"tracking_code", @"USPS", @"carrier", nil];
+    NSDictionary *trackerBody = [NSDictionary dictionaryWithObjectsAndKeys:@"EZ1000000001", @"tracking_code", @"USPS", @"carrier", nil];
     NSDictionary *requestBodyDict = [NSDictionary dictionaryWithObjectsAndKeys:trackerBody, @"tracker", nil];
     NSData *postData = [NSJSONSerialization dataWithJSONObject:requestBodyDict options:kNilOptions error:nil];
     [request setHTTPBody:postData];
@@ -83,6 +84,7 @@ NSString const *kEasyPostAPIProductionKey = @"RVpBSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZD
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createTracker];
+    [self didTrack];
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(createTracker) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
@@ -108,6 +110,24 @@ NSString const *kEasyPostAPIProductionKey = @"RVpBSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZD
   
 }
 
+
+- (void) didTrack {
+    PFQuery *query = [PFQuery queryWithClassName:@"Package"];
+    [query whereKey:@"carrier" equalTo:@"UPS"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+      if (!error) {
+        // The find succeeded.
+        NSLog(@"Successfully retrieved %d scores.", objects.count);
+        // Do something with the found objects
+        for (PFObject *object in objects) {
+            NSLog(@"%@", object.objectId);
+        }
+      } else {
+        // Log details of the failure
+        NSLog(@"Error: %@ %@", error, [error userInfo]);
+      }
+    }];
+}
 
 
     
