@@ -47,9 +47,9 @@
                NSLog(@"Data of tracking: %@", dataDictionary);
                
                manualEntry[@"trackingNumber"] = self.trackingNumber.text;
-               manualEntry[@"carrier"] = dataDictionary[@"carrier"];
-               manualEntry[@"deliveryDate"] = dataDictionary[@"est_delivery_date"];
-               manualEntry[@"status"] = dataDictionary[@"status"];
+//               manualEntry[@"carrier"] = dataDictionary[@"carrier"];
+//               manualEntry[@"deliveryDate"] = dataDictionary[@"est_delivery_date"];
+//               manualEntry[@"status"] = dataDictionary[@"status"];
 //               manualEntry[@"deliveryMessage"] = dataDictionary[@"message"];
                [self dismissViewControllerAnimated:YES completion:nil];
 

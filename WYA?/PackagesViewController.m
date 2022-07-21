@@ -21,7 +21,7 @@
 
 
 @end
-
+//comment to test branch
 @implementation PackagesViewController
 NSString const *kEasyPostTestTrackingCode = @"EZ1000000001";
 NSString const *kEasyPostAPITestKey = @"RVpUSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZDVjY2I5NjEyNDdlY0lGeTZrNENONU9qcWxrM2dBaXFuQQ==";
@@ -121,6 +121,8 @@ NSString const *kEasyPostAPIProductionKey = @"RVpBSzQ1ZjM5ZjY3NDA1YjRmNzg4ZmVmZD
         // Do something with the found objects
         for (PFObject *object in objects) {
             NSLog(@"%@", object.objectId);
+            object[@"trackingNumber"] = self.trackingNumber.text;
+//            self.arrayOfPackages add o
         }
       } else {
         // Log details of the failure
